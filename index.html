@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snowy | Python Developer</title>
+    <style>
+        :root {
+            --bg-color: #0d1117; /* Sehr dunkles Blau/Grau */
+            --card-bg: #161b22;
+            --text-color: #c9d1d9;
+            --main-accent: #3081f7; /* Python Blau */
+            --second-accent: #ffd43b; /* Python Gelb */
+            --glow: 0 0 15px rgba(48, 129, 247, 0.5);
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: var(--card-bg);
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid #30363d;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.7);
+        }
+
+        /* Das Python Logo als SVG (damit es immer scharf ist) */
+        .python-logo {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 20px;
+            filter: drop-shadow(var(--glow));
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin: 0 0 10px 0;
+            background: linear-gradient(45deg, var(--main-accent), var(--second-accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: #8b949e;
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            text-align: left; /* Text linksbündig für bessere Lesbarkeit */
+        }
+
+        .highlight {
+            color: var(--main-accent);
+            font-weight: 600;
+        }
+
+        .js-highlight {
+            color: var(--second-accent);
+            font-weight: 600;
+        }
+
+        .discord-box {
+            background-color: rgba(48, 129, 247, 0.1);
+            border: 1px solid var(--main-accent);
+            padding: 15px;
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Courier New', Courier, monospace; /* Code-Style für den Namen */
+            font-size: 1.1rem;
+            color: #ffffff;
+            transition: background-color 0.3s ease;
+        }
+
+        .discord-box:hover {
+            background-color: rgba(48, 129, 247, 0.2);
+        }
+
+        /* Kleines Discord Icon "Ersatz" */
+        .discord-icon {
+            width: 24px;
+            height: 24px;
+            background-color: #5865F2; /* Discord Blau */
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+            font-family: sans-serif;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <svg class="python-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+            <path fill="#3081f7" d="M160 160c0-17.7 14.3-32 32-32s32 14.3 32 32v192c0 17.7-14.3 32-32 32s-32-14.3-32-32V160zM400 32C426.5 32 448 53.5 448 80v352c0 26.5-21.5 48-48 48H48C21.5 480 0 458.5 0 432V80C0 53.5 21.5 32 48 32H400zM352 224a32 32 0 1 0 0-64 32 32 0 1 0 0 64zM128 224a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"></path>
+            <path fill="#ffd43b" d="M160 160c0-17.7 14.3-32 32-32s32 14.3 32 32v192c0 17.7-14.3 32-32 32s-32-14.3-32-32V160zM400 32C426.5 32 448 53.5 448 80v352c0 26.5-21.5 48-48 48H48C21.5 480 0 458.5 0 432V80C0 53.5 21.5 32 48 32H400zM352 224a32 32 0 1 0 0-64 32 32 0 1 0 0 64zM128 224a32 32 0 1 0 0-64 32 32 0 1 0 0 64z" opacity="0.5"></path>
+            <image href="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" width="448" height="512"/>
+        </svg>
+
+        <h1>Snowy</h1>
+        <p class="subtitle">Python Developer | 8 Months Experience</p>
+
+        <div class="about-text">
+            Hey, I'm Snowy and I'm 14 years old. I'm a developer from Germany and I've been coding in <span class="highlight">Python</span> for about 8 months now. I'm also learning <span class="js-highlight">JavaScript</span> right now to expand my skills.
+            <br><br>
+            If you want to DM me to do something for you, message me on Discord. I'm always open to new projects and I'll do what I can.
+        </div>
+
+        <div class="discord-box">
+            <div class="discord-icon">D</div>
+            xyz23._
+        </div>
+
+    </div>
+
+</body>
+</html>
