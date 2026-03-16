@@ -3,10 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Snowy | Dev Portfolio</title>
+<title>Snowy | Portfolio</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
 <style>
 :root {
     --bg-color: #030712;
@@ -18,80 +17,21 @@
     --border-color: rgba(255, 255, 255, 0.08);
 }
 
-body {
-    font-family: 'Inter', sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-main);
-    margin:0;
-    overflow-x:hidden;
-    position: relative;
-    cursor: none;
-}
+body { font-family: 'Inter', sans-serif; background-color: var(--bg-color); color: var(--text-main); margin:0; overflow-x:hidden; position: relative; cursor: none; }
 
-#snow-canvas {
-    position: fixed;
-    top:0; left:0;
-    width:100%; height:100%;
-    z-index: -2;
-    pointer-events: none;
-}
+#snow-canvas { position: fixed; top:0; left:0; width:100%; height:100%; z-index: -2; pointer-events: none; }
+#snow-cursor { position: fixed; width: 12px; height: 12px; border-radius: 50%; background: var(--accent-blue); pointer-events: none; transform: translate(-50%, -50%); z-index: 9999; box-shadow: 0 0 10px var(--accent-blue); }
 
-#snow-cursor {
-    position: fixed;
-    width: 12px; height: 12px;
-    border-radius: 50%;
-    background: var(--accent-blue);
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    z-index: 9999;
-    box-shadow: 0 0 10px var(--accent-blue);
-}
-
-nav {
-    position: fixed; top:30px; left:50%;
-    transform: translateX(-50%);
-    background: rgba(17,24,39,0.7);
-    backdrop-filter: blur(12px);
-    z-index: 1000;
-    padding:12px 30px;
-    border-radius:100px;
-    border:1px solid var(--border-color);
-    display:flex; gap:15px;
-}
+nav { position: fixed; top:30px; left:50%; transform: translateX(-50%); background: rgba(17,24,39,0.7); backdrop-filter: blur(12px); z-index: 1000; padding:12px 30px; border-radius:100px; border:1px solid var(--border-color); display:flex; gap:15px; }
 nav a { color: var(--text-dim); text-decoration:none; font-size:0.8rem; font-weight:500; transition:0.3s; }
 nav a:hover { color: var(--accent-blue); }
 
-section {
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    padding:100px 20px;
-    position: relative;
-    z-index:1;
-}
+section { min-height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; padding:100px 20px; position: relative; z-index:1; }
 
-.hero h1 {
-    font-size: clamp(3.5rem,14vw,7rem);
-    font-weight:800;
-    margin:0;
-    background: linear-gradient(to bottom,#fff 30%,var(--accent-blue) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
+.hero h1 { font-size: clamp(3.5rem,14vw,7rem); font-weight:800; margin:0; background: linear-gradient(to bottom,#fff 30%,var(--accent-blue) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 .typing-container { color: var(--accent-blue); font-weight:600; letter-spacing:4px; font-size:1rem; }
 
-.content-card {
-    background: var(--card-bg);
-    border:1px solid var(--border-color);
-    border-radius:40px;
-    padding:50px;
-    max-width:800px;
-    width:100%;
-    backdrop-filter: blur(25px);
-    transition:0.3s;
-}
+.content-card { background: var(--card-bg); border:1px solid var(--border-color); border-radius:40px; padding:50px; max-width:800px; width:100%; backdrop-filter: blur(25px); transition:0.3s; }
 .content-card:hover{ box-shadow:0 0 25px var(--accent-glow); }
 
 .welcome-text { font-size:1.5rem; line-height:1.6; font-weight:400; text-align:center; }
@@ -104,38 +44,15 @@ section {
 .progress { height:100%; background: var(--accent-blue); border-radius:10px; width:0; transition:width 1.5s ease; }
 .learning-tag { font-size:0.65rem; background: rgba(59,130,246,0.15); color: var(--accent-blue); padding:2px 8px; border-radius:4px; border:1px solid var(--accent-blue); }
 
-.project-grid {
-    display:grid;
-    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
-    gap:20px;
-    width:100%;
-}
-.project-box {
-    background: rgba(255,255,255,0.02);
-    border:1px solid var(--border-color);
-    border-radius:20px;
-    padding:25px;
-    transition:0.3s;
-}
+.project-grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap:20px; width:100%; }
+.project-box { background: rgba(255,255,255,0.02); border:1px solid var(--border-color); border-radius:20px; padding:25px; transition:0.3s; }
 .project-box:hover{ border-color: var(--accent-blue); transform: translateY(-5px); box-shadow:0 0 15px var(--accent-glow); }
 
-.discord-btn{
-    background:#fff; color:#000; padding:15px 40px;
-    border-radius:100px; text-decoration:none; font-weight:700; transition:0.3s; display:inline-block;
-}
+.discord-btn{ background:#fff; color:#000; padding:15px 40px; border-radius:100px; text-decoration:none; font-weight:700; transition:0.3s; display:inline-block; }
 
 footer{ padding:40px; opacity:0.4; font-size:0.7rem; text-align:center; }
 
-#fake-terminal{
-    background: rgba(17,24,39,0.9);
-    color: #f9fafb;
-    font-family: monospace;
-    border-radius: 20px;
-    padding:20px;
-    min-height:200px;
-    overflow-y:auto;
-    box-shadow:0 0 20px var(--accent-glow);
-}
+#fake-terminal{ background: rgba(17,24,39,0.9); color: #f9fafb; font-family: monospace; border-radius: 20px; padding:20px; min-height:200px; overflow-y:auto; box-shadow:0 0 20px var(--accent-glow); }
 .terminal-output{ margin-bottom:10px; white-space:pre-wrap; }
 .terminal-line{ display:flex; align-items:center; }
 .terminal-prompt{ margin-right:10px; color: var(--accent-blue);}
@@ -169,7 +86,7 @@ footer{ padding:40px; opacity:0.4; font-size:0.7rem; text-align:center; }
 <p class="welcome-text">
 👋 <span class="welcome-highlight">Hi, I'm Snowy!</span><br>
 I am a <span class="welcome-highlight">14-year-old developer</span> from Germany 🇩🇪.<br><br>
-I code in <span class="welcome-highlight">Python</span>, <span class="welcome-highlight">Java</span>, <span class="welcome-highlight">TypeScript</span>, and <span class="welcome-highlight">HTML</span>.
+I code in <span class="welcome-highlight">Python</span>, <span class="welcome-highlight">HTML</span>, <span class="welcome-highlight">Java</span>, <span class="welcome-highlight">TypeScript</span>.
 </p>
 </div>
 </section>
@@ -178,45 +95,29 @@ I code in <span class="welcome-highlight">Python</span>, <span class="welcome-hi
 <div class="content-card">
 <h2 style="margin-top:0;">Experience 📜</h2>
 
-<!-- Skills -->
 <div class="skill-item">
-  <div class="skill-header">
-    <div class="skill-name"><i class="fa-brands fa-python"></i> Python 🐍</div>
-    <span>8 Months</span>
-  </div>
-  <div class="progress-bar"><div class="progress" data-done="85"></div></div>
+<div class="skill-header"><div class="skill-name"><i class="fa-brands fa-python"></i> Python 🐍</div><span>8 Months</span></div>
+<div class="progress-bar"><div class="progress" data-done="85"></div></div>
 </div>
 
 <div class="skill-item">
-  <div class="skill-header">
-    <div class="skill-name"><i class="fa-brands fa-html5"></i> HTML 🖥️</div>
-    <span>7 Months</span>
-  </div>
-  <div class="progress-bar"><div class="progress" data-done="70"></div></div>
+<div class="skill-header"><div class="skill-name"><i class="fa-brands fa-html5"></i> HTML 🖥️</div><span>7 Months</span></div>
+<div class="progress-bar"><div class="progress" data-done="70"></div></div>
 </div>
 
 <div class="skill-item">
-  <div class="skill-header">
-    <div class="skill-name"><i class="fa-brands fa-java"></i> Java ☕</div>
-    <span>6 Months</span>
-  </div>
-  <div class="progress-bar"><div class="progress" data-done="60"></div></div>
+<div class="skill-header"><div class="skill-name"><i class="fa-brands fa-java"></i> Java ☕</div><span>6 Months</span></div>
+<div class="progress-bar"><div class="progress" data-done="60"></div></div>
 </div>
 
 <div class="skill-item">
-  <div class="skill-header">
-    <div class="skill-name"><i class="fa-solid fa-code"></i> TypeScript 📘</div>
-    <span>5 Months</span>
-  </div>
-  <div class="progress-bar"><div class="progress" data-done="55"></div></div>
+<div class="skill-header"><div class="skill-name"><i class="fa-solid fa-code"></i> TypeScript 📘</div><span>5 Months</span></div>
+<div class="progress-bar"><div class="progress" data-done="55"></div></div>
 </div>
 
 <div class="skill-item">
-  <div class="skill-header">
-    <div class="skill-name"><i class="fa-brands fa-js"></i> JavaScript 💻</div>
-    <span class="learning-tag">LEARNING</span>
-  </div>
-  <div class="progress-bar"><div class="progress" data-done="35"></div></div>
+<div class="skill-header"><div class="skill-name"><i class="fa-brands fa-js"></i> JavaScript 💻</div><span class="learning-tag">LEARNING</span></div>
+<div class="progress-bar"><div class="progress" data-done="35"></div></div>
 </div>
 
 </div>
@@ -239,7 +140,7 @@ I code in <span class="welcome-highlight">Python</span>, <span class="welcome-hi
 <div class="project-box">
 <i class="fa-solid fa-cube" style="color: var(--accent-blue); font-size:1.5rem;"></i>
 <h4>MC Plugins</h4>
-<p style="font-size:0.85rem;color:var(--text-dim);">Custom Java logic</p>
+<p style="font-size:0.85rem;color:var(--text-dim);">Custom Java servers or plugins</p>
 </div>
 </div>
 </div>
@@ -249,9 +150,9 @@ I code in <span class="welcome-highlight">Python</span>, <span class="welcome-hi
 <div class="content-card" style="background:none;border:none;">
 <h2 style="text-align:center;">Selected Work 🛠️</h2>
 <div class="project-grid">
-<div class="project-box"><h4>PyAutoBot</h4><p>Moderation & Tools</p></div>
+<div class="project-box"><h4>PythonAutoBot</h4><p>Moderation & Tools Discord Bot</p></div>
 <div class="project-box"><h4>DataPulse</h4><p>Amazon Tracker</p></div>
-<div class="project-box"><h4>Snowy.dev</h4><p>Portfolio v1</p></div>
+<div class="project-box"><h4>Snowy.dev</h4><p>Portfolio v4</p></div>
 <div class="project-box"><h4>SnowyCore</h4><p>MC Plugin</p></div>
 </div>
 </div>
@@ -261,8 +162,10 @@ I code in <span class="welcome-highlight">Python</span>, <span class="welcome-hi
 <div class="content-card" style="max-width:700px;">
 <h2 style="margin-top:0;text-align:center;">Try the Terminal 💻</h2>
 <div id="fake-terminal">
+<div id="terminal-output-container">
 <div class="terminal-output">Welcome to Snowy's Dev Terminal! ❄️</div>
 <div class="terminal-output">Type "help" to see commands</div>
+</div>
 <div class="terminal-line">
 <span class="terminal-prompt">snowy@dev:~$</span>
 <input id="command" class="terminal-input" placeholder='Type a command'>
@@ -311,9 +214,16 @@ document.querySelectorAll('.skill-item').forEach(s=>observer.observe(s));
 
 // ===== Terminal =====
 const terminal=document.getElementById("fake-terminal");
+const outputContainer=document.getElementById("terminal-output-container");
 const input=document.getElementById("command");
 
 function handleCommand(cmd){
+    cmd = cmd.trim();
+    if(cmd==="") return;
+    if(cmd.toLowerCase()==="clear"){
+        outputContainer.innerHTML=""; // nur die Ausgaben löschen
+        return;
+    }
     let output=document.createElement("div");
     output.className="terminal-output";
     switch(cmd.toLowerCase()){
@@ -325,16 +235,13 @@ function handleCommand(cmd){
         case "about": output.textContent="I love Python, Java, TypeScript, HTML, Minecraft Plugins & Discord Bots!"; break;
         case "secret": output.textContent="🎉 You found the secret Easter Egg! Keep coding!"; break;
         case "github": output.textContent="GitHub: https://github.com/yourusername"; break;
-        case "clear": terminal.innerHTML=""; break;
         default: output.textContent=`Unknown command: ${cmd}`;
     }
-    if(cmd.toLowerCase()!=="clear") terminal.insertBefore(output,input.parentElement);
+    outputContainer.appendChild(output);
     terminal.scrollTop=terminal.scrollHeight;
 }
 
-input.addEventListener("keydown",function(e){
-if(e.key==="Enter"){ handleCommand(input.value); input.value=""; }
-});
+input.addEventListener("keydown",function(e){ if(e.key==="Enter"){ handleCommand(input.value); input.value=""; } });
 
 // ===== Custom Cursor =====
 const cursor=document.getElementById("snow-cursor");
