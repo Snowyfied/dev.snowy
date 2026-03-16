@@ -1,218 +1,585 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Snowy | Developer V4</title>
+
+<title>Snowy | Developer</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <style>
-/* ================= GLOBAL ================= */
-html{scroll-behavior:smooth;}
-body{margin:0;font-family:'Inter',sans-serif;background:#030712;color:white;overflow-x:hidden;}
-#scrollbar{position:fixed;top:0;left:0;height:3px;width:0;background:#3b82f6;z-index:9999;}
 
-/* ================ 3D PARALLAX BACKGROUND ================ */
-#parallax-bg{position:fixed;top:0;left:0;width:100%;height:100%;overflow:hidden;z-index:-2;}
-.parallax-layer{position:absolute;width:200%;height:200%;background-repeat:no-repeat;background-size:cover;pointer-events:none;}
-.layer1{background-image:url('https://i.ibb.co/NrB9rZ7/layer1.png');}
-.layer2{background-image:url('https://i.ibb.co/0s5L7YH/layer2.png');}
-.layer3{background-image:url('https://i.ibb.co/5rGv7Mj/layer3.png');}
+/* ============================= */
+/* GLOBAL                        */
+/* ============================= */
 
-/* ================= PARTICLE BACKGROUND ================= */
-#particles{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;}
+html{
+scroll-behavior:smooth;
+}
 
-/* ================ NAVBAR ================ */
-nav{position:fixed;top:25px;left:50%;transform:translateX(-50%);background:rgba(17,24,39,0.7);backdrop-filter:blur(10px);padding:12px 30px;border-radius:100px;display:flex;gap:20px;border:1px solid rgba(255,255,255,0.1);z-index:1000;}
-nav a{color:#9ca3af;text-decoration:none;font-size:.8rem;transition:.3s;}
-nav a:hover{color:#3b82f6;}
+body{
 
-/* ================ HERO ================ */
-.hero{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;}
-.hero h1{font-size:clamp(3rem,10vw,6rem);margin:0;background:linear-gradient(#fff,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+margin:0;
+font-family:'Inter',sans-serif;
 
-/* ================ CARDS & GRID ================ */
-.card{background:rgba(255,255,255,0.05);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.08);border-radius:25px;padding:40px;max-width:900px;width:100%;transition:.3s;}
-.card:hover{transform:translateY(-5px);}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;}
-.project{padding:25px;background:rgba(255,255,255,0.02);border-radius:20px;border:1px solid rgba(255,255,255,0.1);cursor:pointer;transition:.3s;}
-.project:hover{border-color:#3b82f6;transform:translateY(-5px);}
+background:#030712;
+color:white;
 
-/* ================ MODAL ================ */
-.modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);display:flex;justify-content:center;align-items:center;opacity:0;visibility:hidden;transition:.3s;z-index:10000;}
-.modal.active{opacity:1;visibility:visible;}
-.modal-content{background:#111827;padding:30px;border-radius:20px;max-width:600px;width:90%;}
-.modal-close{position:absolute;top:20px;right:20px;font-size:1.5rem;cursor:pointer;color:#fff;}
+overflow-x:hidden;
 
-/* ================ SKILL BARS ================ */
-.skill-bar{margin-bottom:15px;}
-.skill-bar span{display:block;background:#111827;border-radius:10px;overflow:hidden;}
-.skill-bar span div{height:20px;width:0%;background:#3b82f6;border-radius:10px;transition:1s;}
+}
 
-/* ================ TERMINAL ================ */
-.terminal{background:#020617;border-radius:20px;padding:25px;font-family:monospace;}
-.terminal-header{color:#9ca3af;margin-bottom:10px;}
+/* Scroll bar */
 
-/* ================ SCROLL ANIMATION ================ */
-.reveal{opacity:0;transform:translateY(40px);transition:1s;}
-.reveal.show{opacity:1;transform:translateY(0);}
+#scrollbar{
 
-/* ================ CONTACT ================ */
-input,textarea{width:100%;padding:12px;margin-top:10px;border-radius:10px;border:none;background:#111827;color:white;}
-button{margin-top:15px;padding:12px 30px;border-radius:100px;border:none;background:#3b82f6;color:white;cursor:pointer;}
-section{padding:120px 20px;display:flex;justify-content:center;}
+position:fixed;
+top:0;
+left:0;
+
+height:3px;
+width:0;
+
+background:#3b82f6;
+
+z-index:9999;
+
+}
+
+/* ============================= */
+/* PARTICLE BACKGROUND           */
+/* ============================= */
+
+#particles{
+
+position:fixed;
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+z-index:-1;
+
+}
+
+/* ============================= */
+/* NAVBAR                        */
+/* ============================= */
+
+nav{
+
+position:fixed;
+
+top:25px;
+left:50%;
+
+transform:translateX(-50%);
+
+background:rgba(17,24,39,0.7);
+
+backdrop-filter:blur(10px);
+
+padding:12px 30px;
+
+border-radius:100px;
+
+display:flex;
+gap:20px;
+
+border:1px solid rgba(255,255,255,0.1);
+
+z-index:1000;
+
+}
+
+nav a{
+
+color:#9ca3af;
+
+text-decoration:none;
+
+font-size:.8rem;
+
+}
+
+nav a:hover{
+
+color:#3b82f6;
+
+}
+
+/* ============================= */
+/* HERO                          */
+/* ============================= */
+
+.hero{
+
+height:100vh;
+
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+
+}
+
+.hero h1{
+
+font-size:clamp(3rem,10vw,6rem);
+
+margin:0;
+
+background:linear-gradient(#fff,#3b82f6);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+}
+
+/* ============================= */
+/* CARDS                         */
+/* ============================= */
+
+.card{
+
+background:rgba(255,255,255,0.05);
+
+backdrop-filter:blur(20px);
+
+border:1px solid rgba(255,255,255,0.08);
+
+border-radius:25px;
+
+padding:40px;
+
+max-width:900px;
+width:100%;
+
+}
+
+/* ============================= */
+/* GRID                          */
+/* ============================= */
+
+.grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+
+gap:20px;
+
+}
+
+.project{
+
+padding:25px;
+
+background:rgba(255,255,255,0.02);
+
+border-radius:20px;
+
+border:1px solid rgba(255,255,255,0.1);
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.project:hover{
+
+border-color:#3b82f6;
+transform:translateY(-5px);
+
+}
+
+/* ============================= */
+/* TERMINAL                      */
+/* ============================= */
+
+.terminal{
+
+background:#020617;
+
+border-radius:20px;
+
+padding:25px;
+
+font-family:monospace;
+
+}
+
+.terminal-header{
+
+color:#9ca3af;
+
+margin-bottom:10px;
+
+}
+
+/* ============================= */
+/* SCROLL ANIMATION              */
+/* ============================= */
+
+.reveal{
+
+opacity:0;
+transform:translateY(40px);
+
+transition:1s;
+
+}
+
+.reveal.show{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+/* ============================= */
+/* CONTACT FORM                  */
+/* ============================= */
+
+input,textarea{
+
+width:100%;
+
+padding:12px;
+
+margin-top:10px;
+
+border-radius:10px;
+
+border:none;
+
+background:#111827;
+
+color:white;
+
+}
+
+button{
+
+margin-top:15px;
+
+padding:12px 30px;
+
+border-radius:100px;
+
+border:none;
+
+background:#3b82f6;
+
+color:white;
+
+cursor:pointer;
+
+}
+
+section{
+
+padding:120px 20px;
+
+display:flex;
+justify-content:center;
+
+}
+
 </style>
+
 </head>
+
 <body>
 
 <div id="scrollbar"></div>
-<div id="parallax-bg">
-  <div class="parallax-layer layer1"></div>
-  <div class="parallax-layer layer2"></div>
-  <div class="parallax-layer layer3"></div>
-</div>
+
 <canvas id="particles"></canvas>
 
 <nav>
+
 <a href="#home">Home</a>
 <a href="#projects">Projects</a>
 <a href="#skills">Skills</a>
 <a href="#terminal">Terminal</a>
 <a href="#contact">Contact</a>
+
 </nav>
 
 <!-- HERO -->
+
 <section id="home">
+
 <div class="hero">
+
 <h1>SNOWY</h1>
+
 <p>Python • Java • TypeScript</p>
+
 </div>
+
 </section>
 
 <!-- PROJECT FILTER -->
+
 <section id="projects">
+
 <div class="card reveal">
+
 <h2>Projects</h2>
+
 <div style="margin-bottom:20px">
+
 <button onclick="filterProjects('all')">All</button>
 <button onclick="filterProjects('bot')">Bots</button>
 <button onclick="filterProjects('web')">Web</button>
 <button onclick="filterProjects('plugin')">Plugins</button>
+
 </div>
+
 <div class="grid">
+
 <div class="project" data-type="bot">Discord Bot</div>
 <div class="project" data-type="web">Web Scraper</div>
 <div class="project" data-type="plugin">Minecraft Plugin</div>
 <div class="project" data-type="bot">Moderation System</div>
+
 </div>
+
 </div>
+
 </section>
 
 <!-- SKILL RADAR -->
+
 <section id="skills">
+
 <div class="card reveal">
+
 <h2>Skill Radar</h2>
+
 <canvas id="skillChart"></canvas>
+
 </div>
+
 </section>
 
 <!-- TERMINAL -->
+
 <section id="terminal">
+
 <div class="card reveal">
+
 <h2>Developer Terminal</h2>
+
 <div class="terminal">
+
 <div class="terminal-header">snowy@dev:~</div>
+
 <p>> whoami</p>
 <p>Snowy — Developer</p>
+
 <p>> languages</p>
 <p>Python / Java / TypeScript</p>
+
 <p>> status</p>
 <p>Building cool projects 🚀</p>
+
 </div>
+
 </div>
+
 </section>
 
 <!-- GITHUB -->
+
 <section>
+
 <div class="card reveal">
+
 <h2>GitHub Activity</h2>
+
 <img src="https://github-readme-stats.vercel.app/api?username=YOURNAME&theme=dark&show_icons=true">
+
 <br><br>
+
 <img src="https://ghchart.rshah.org/YOURNAME">
+
 </div>
+
 </section>
 
 <!-- CONTACT -->
+
 <section id="contact">
+
 <div class="card reveal">
+
 <h2>Contact</h2>
+
 <form>
+
 <input type="text" placeholder="Name">
+
 <input type="email" placeholder="Email">
+
 <textarea placeholder="Message"></textarea>
+
 <button>Send</button>
+
 </form>
+
 </div>
+
 </section>
 
 <script>
-/* ================= PARTICLES ================= */
-const canvas=document.getElementById("particles");
-const ctx=canvas.getContext("2d");
-canvas.width=window.innerWidth;
-canvas.height=window.innerHeight;
-let particles=[];
+
+/* ============================= */
+/* PARTICLES                     */
+/* ============================= */
+
+const canvas=document.getElementById("particles")
+const ctx=canvas.getContext("2d")
+
+canvas.width=window.innerWidth
+canvas.height=window.innerHeight
+
+let particles=[]
+
 for(let i=0;i<120;i++){
-  particles.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,vx:(Math.random()-0.5)*0.5,vy:(Math.random()-0.5)*0.5});
+
+particles.push({
+
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+vx:(Math.random()-0.5)*0.5,
+vy:(Math.random()-0.5)*0.5
+
+})
+
 }
+
 function animate(){
-  ctx.clearRect(0,0,canvas.width,canvas.height);
-  particles.forEach(p=>{
-    p.x+=p.vx;
-    p.y+=p.vy;
-    ctx.beginPath();
-    ctx.arc(p.x,p.y,2,0,Math.PI*2);
-    ctx.fillStyle="rgba(255,255,255,0.2)";
-    ctx.fill();
-  });
-  requestAnimationFrame(animate);
-}
-animate();
 
-/* ================= PROJECT FILTER ================= */
+ctx.clearRect(0,0,canvas.width,canvas.height)
+
+particles.forEach(p=>{
+
+p.x+=p.vx
+p.y+=p.vy
+
+ctx.beginPath()
+ctx.arc(p.x,p.y,2,0,Math.PI*2)
+ctx.fillStyle="rgba(255,255,255,0.2)"
+ctx.fill()
+
+})
+
+requestAnimationFrame(animate)
+
+}
+
+animate()
+
+/* ============================= */
+/* PROJECT FILTER                */
+/* ============================= */
+
 function filterProjects(type){
-  document.querySelectorAll(".project").forEach(p=>{
-    if(type==="all"){p.style.display="block";return;}
-    if(p.dataset.type===type){p.style.display="block";}else{p.style.display="none";}
-  });
+
+document.querySelectorAll(".project").forEach(p=>{
+
+if(type==="all"){
+p.style.display="block"
+return
 }
 
-/* ================= RADAR CHART ================= */
-new Chart(document.getElementById("skillChart"),{
-  type:"radar",
-  data:{
-    labels:["Python","Java","TypeScript","JavaScript","Problem Solving"],
-    datasets:[{label:"Skills",data:[85,60,55,40,80],backgroundColor:"rgba(59,130,246,0.3)",borderColor:"#3b82f6"}]
-  }
-});
+if(p.dataset.type===type){
+p.style.display="block"
+}else{
+p.style.display="none"
+}
 
-/* ================= SCROLL PROGRESS ================= */
+})
+
+}
+
+/* ============================= */
+/* RADAR CHART                   */
+/* ============================= */
+
+new Chart(
+
+document.getElementById("skillChart"),
+
+{
+
+type:"radar",
+
+data:{
+
+labels:["Python","Java","TypeScript","JavaScript","Problem Solving"],
+
+datasets:[{
+
+label:"Skills",
+
+data:[85,60,55,40,80],
+
+backgroundColor:"rgba(59,130,246,0.3)",
+borderColor:"#3b82f6"
+
+}]
+
+}
+
+})
+
+/* ============================= */
+/* SCROLL PROGRESS               */
+/* ============================= */
+
 window.addEventListener("scroll",()=>{
-  let height=document.documentElement.scrollHeight-document.documentElement.clientHeight;
-  let scrolled=(window.scrollY/height)*100;
-  document.getElementById("scrollbar").style.width=scrolled+"%";
-});
 
-/* ================= SCROLL ANIMATION ================= */
+let height=document.documentElement.scrollHeight-document.documentElement.clientHeight
+
+let scrolled=(window.scrollY/height)*100
+
+document.getElementById("scrollbar").style.width=scrolled+"%"
+
+})
+
+/* ============================= */
+/* SCROLL ANIMATION              */
+/* ============================= */
+
 const observer=new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){entry.target.classList.add("show")}
-  });
-});
-document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show")
+
+}
+
+})
+
+})
+
+document.querySelectorAll(".reveal").forEach(el=>observer.observe(el))
+
 </script>
 
 </body>
