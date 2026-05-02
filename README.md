@@ -1,4 +1,4 @@
-pythonModerationBot.py is just a pyhton discord bot for moderaition, it has /kick /ban /timeout /warn and an auto raid and auto spam system. all warns goes away in 7 days auto.
+pythonModerationBot.py is just a pyhton discord bot for moderation, it has /kick /ban /timeout /warn and an auto raid and auto spam system. all warns goes away in 7 days auto.
 and index.html is just a portfolio (mine) 
 it has stuff like:
 [x] coding stuff
